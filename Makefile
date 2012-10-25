@@ -30,4 +30,4 @@ lpc21isp: lpc21isp.c adprog.o lpcprog.o lpcterm.o $(GLOBAL_DEP)
 	$(CC) $(CDEBUG) $(CFLAGS) -o lpc21isp.out lpc21isp.c adprog.o lpcprog.o lpcterm.o
 
 clean:
-	$(RM) adprog.o lpcprog.o lpcterm.o lpc21isp
+	$(RM) adprog.o lpcprog.o lpcterm.o lpc21isp.out
