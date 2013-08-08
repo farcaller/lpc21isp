@@ -1962,17 +1962,19 @@ static int LoadFiles1(ISP_ENVIRONMENT *IspEnvironment, const FILE_LIST *file)
 {
     int ret_val;
 
-    if(!file || !file->prev)
+    if(!file)
     {
         return -1;
     }
 
     DebugPrintf( 3, "Follow file list %s\n", file->name);
 
-    ret_val = LoadFiles1( IspEnvironment, file->prev);
-    if( ret_val != 0)
-    {
-        return ret_val;
+    if(file->prev) {
+          ret_val = LoadFiles1( IspEnvironment, file->prev);
+          if( ret_val != 0)
+          {
+              return ret_val;
+          }
     }
 
     DebugPrintf( 3, "Attempt to read File %s\n", file->name);
