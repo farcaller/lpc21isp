@@ -486,7 +486,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             SendComPort(IspEnvironment, "?");
 
             memset(Answer,0,sizeof(Answer));
-            ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 1,100);
+            ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2,100);
 
             strippedAnswer = Answer;
             strippedsize = realsize;
